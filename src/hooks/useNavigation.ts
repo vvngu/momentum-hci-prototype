@@ -12,7 +12,7 @@ export const useNavigation = (initialTab: NavigationTab = 'dashboard') => {
   }, [activeTab]);
 
   const canNavigateTo = useCallback((tab: NavigationTab) => {
-    return ['dashboard', 'vision', 'calendar', 'insights'].includes(tab);
+    return ['dashboard', 'vision', 'calendar', 'insights','settings'].includes(tab);
   }, []);
 
   return {
