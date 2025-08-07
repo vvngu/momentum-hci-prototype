@@ -12,8 +12,7 @@ export const useNavigation = (initialTab: NavigationTab = 'dashboard') => {
   }, [activeTab]);
 
   const canNavigateTo = useCallback((tab: NavigationTab) => {
-    // Only dashboard and vision are implemented for prototype
-    return ['dashboard', 'vision'].includes(tab);
+    return ['dashboard', 'vision', 'calendar', 'insights'].includes(tab);
   }, []);
 
   return {
