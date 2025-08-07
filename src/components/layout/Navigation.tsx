@@ -22,7 +22,7 @@ export const Navigation: React.FC<NavigationProps> = ({
   canNavigateTo 
 }) => {
   return (
-    <div className="absolute bottom-0 left-0 right-0 h-20 bg-white border-t border-gray-200 flex justify-around items-center">
+    <div className="absolute bottom-0 left-0 right-0 h-20 bg-white border-t border-gray-200 flex items-center">
       {tabs.map((tab) => {
         const isActive = activeTab === tab.id;
         const canNavigate = canNavigateTo(tab.id);
@@ -31,7 +31,7 @@ export const Navigation: React.FC<NavigationProps> = ({
           <motion.div
             key={tab.id}
             onClick={() => canNavigate ? onTabChange(tab.id) : null}
-            className={`flex flex-col items-center p-2 transition-all ${
+            className={`flex flex-col items-center p-1 transition-all ${
               isActive ? 'text-primary-500' : 'text-gray-400'
             } ${canNavigate ? 'cursor-pointer' : 'opacity-50 cursor-not-allowed'}`}
             whileTap={canNavigate ? { scale: 0.95 } : {}}

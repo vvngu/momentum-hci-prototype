@@ -10,7 +10,7 @@ export const StatusBar: React.FC = () => {
   return (
     <div className="bg-gray-50 h-11 flex justify-between items-center px-5 text-sm font-semibold">
       <span>{currentTime}</span>
-      <span>📶 📶 🔋</span>
+      <span className="ml-4">📶 📶 🔋</span>
     </div>
   );
 };

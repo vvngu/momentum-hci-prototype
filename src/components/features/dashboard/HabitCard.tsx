@@ -17,7 +17,7 @@ export const HabitCard: React.FC<HabitCardProps> = ({ habit, onComplete }) => {
 
   return (
     <motion.div 
-      className="bg-gray-50 rounded-xl p-4 mb-3 border-l-4 border-green-500"
+      className="bg-gray-100 rounded-xl p-4 mb-3 border-l-4 border-green-500"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
@@ -27,7 +27,7 @@ export const HabitCard: React.FC<HabitCardProps> = ({ habit, onComplete }) => {
         <div className="font-semibold text-base">
           {habit.emoji} {habit.name}
         </div>
-        <div className="text-xs text-gray-500">
+        <div className="text-xs text-primary-500 ml-4">
           {habit.streak} day streak
         </div>
       </div>

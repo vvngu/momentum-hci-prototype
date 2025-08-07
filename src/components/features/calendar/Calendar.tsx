@@ -33,8 +33,8 @@ export const Calendar: React.FC<CalendarProps> = ({ habits }) => {
       </div>
       
       {/* Month Header */}
-      <div className="flex justify-between items-center mb-4">
-        <button className="text-gray-500 text-2xl">‹</button>
+      <div className="flex items-center justify-around mb-4">
+        <button className="text-gray-500 text-2xl ">‹</button>
         <h2 className="text-lg font-bold text-gray-800">{monthName}</h2>
         <button className="text-gray-500 text-2xl">›</button>
       </div>
@@ -85,16 +85,16 @@ export const Calendar: React.FC<CalendarProps> = ({ habits }) => {
         <h3 className="font-semibold mb-3 text-gray-800">Legend</h3>
         <div className="grid grid-cols-2 gap-2">
           <div className="flex items-center">
-            <div className="w-4 h-4 bg-green-100 border border-green-200 rounded mr-2"></div>
-            <span className="text-xs">Completed</span>
+            <div className="w-4 h-4 bg-green-100 border border-green-200 rounded mr-2 "></div>
+            <span className="text-xs ml-2">Completed</span>
           </div>
           <div className="flex items-center">
-            <div className="w-4 h-4 bg-primary-50 border-2 border-primary-500 rounded mr-2"></div>
-            <span className="text-xs">Today</span>
+            <div className="w-4 h-4 border-primary-500 bg-primary-500 border-2 rounded mr-2"></div>
+            <span className="text-xs ml-2">Today</span>
           </div>
           <div className="flex items-center">
             <div className="w-4 h-4 border-yellow-200 bg-yellow-100 text-yellow-700 rounded mr-2"></div>
-            <span className="text-xs">Partial</span>
+            <span className="text-xs ml-2">Partial</span>
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@ export const Calendar: React.FC<CalendarProps> = ({ habits }) => {
         {habits.map(habit => (
           <div key={habit.id} className="flex justify-between items-center py-2 border-b border-gray-200 last:border-0">
             <span className="text-sm">{habit.emoji} {habit.name}</span>
-            <span className="text-sm font-medium text-primary-500">{habit.streak} days</span>
+            <span className="text-sm font-medium text-primary-500 ml-4">{habit.streak} days</span>
           </div>
         ))}
       </div>

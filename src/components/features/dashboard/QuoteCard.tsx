@@ -9,7 +9,7 @@ interface QuoteCardProps {
 export const QuoteCard: React.FC<QuoteCardProps> = ({ quote }) => {
   return (
     <motion.div 
-      className="bg-gradient-to-r from-yellow-200 to-orange-300 p-4 rounded-xl mb-5 text-center"
+      className="bg-gradient-to-r from-yellow-200 to-orange-300 p-4 rounded-xl mb-5 text-center shine-effect relative overflow-hidden"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.1 }}

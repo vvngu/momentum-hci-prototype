@@ -10,6 +10,8 @@ export const Settings: React.FC<SettingsProps> = ({ habits }) => {
   const [darkMode, setDarkMode] = useState(false);
   const [notifications, setNotifications] = useState(true);
   const [dailyGoal, setDailyGoal] = useState('3');
+  const [streaks, setStreaks] = useState(false);
+  const [animations, setAnimations] = useState(false);
 
   const SettingRow = ({ 
     label, 
@@ -50,7 +52,7 @@ export const Settings: React.FC<SettingsProps> = ({ habits }) => {
       </div>
 
       {/* Profile Section */}
-      <div className="bg-white rounded-xl p-4 mb-6 border">
+      <div className="bg-gray-100  rounded-xl p-4 mb-6 border">
         <h3 className="font-semibold text-gray-800 mb-4">Profile</h3>
         
         <div className="text-center mb-4">
@@ -61,7 +63,7 @@ export const Settings: React.FC<SettingsProps> = ({ habits }) => {
           <p className="text-sm text-gray-500">Habit Tracker User</p>
         </div>
 
-        <button className="w-full bg-gray-50 text-gray-700 py-2 px-4 rounded-lg text-sm font-medium">
+        <button className="w-full bg-gray-200 text-gray-700 py-2 px-4 rounded-lg text-sm font-medium">
           Edit Profile
         </button>
       </div>
@@ -71,14 +73,16 @@ export const Settings: React.FC<SettingsProps> = ({ habits }) => {
         <h3 className="font-semibold text-gray-800 mb-4">Appearance</h3>
         
         <SettingRow label="Dark Mode">
+        <div className="ml-2">
           <Toggle enabled={darkMode} onChange={setDarkMode} />
+        </div>
         </SettingRow>
-
+        
         <SettingRow label="Theme Color">
-          <div className="flex space-x-2">
+          <div className="flex space-x-2 justify-around ml-2 ">
             <div className="w-6 h-6 bg-primary-500 rounded-full border-2 border-primary-600"></div>
             <div className="w-6 h-6 bg-green-500 rounded-full border border-gray-200"></div>
-            <div className="w-6 h-6 bg-purple-500 rounded-full border border-gray-200"></div>
+            <div className="w-6 h-6 bg-pink-500  rounded-full border border-gray-200"></div>
           </div>
         </SettingRow>
       </div>
@@ -91,7 +95,7 @@ export const Settings: React.FC<SettingsProps> = ({ habits }) => {
           <select 
             value={dailyGoal}
             onChange={(e) => setDailyGoal(e.target.value)}
-            className="bg-gray-50 border border-gray-200 rounded-lg px-3 py-1 text-sm"
+            className="bg-gray-50 border border-gray-200 rounded-lg px-3 py-1 text-s ml-2"
           >
             <option value="1">1 habit</option>
             <option value="2">2 habits</option>
@@ -101,11 +105,15 @@ export const Settings: React.FC<SettingsProps> = ({ habits }) => {
         </SettingRow>
 
         <SettingRow label="Show Streaks">
-          <Toggle enabled={true} onChange={() => {}} />
+        <div className="ml-2">
+          <Toggle enabled={streaks} onChange={setStreaks} />
+        </div>
         </SettingRow>
 
         <SettingRow label="Progress Animations">
-          <Toggle enabled={true} onChange={() => {}} />
+        <div className="ml-2">
+          <Toggle enabled={animations} onChange={setAnimations} />
+        </div>
         </SettingRow>
       </div>
 
@@ -114,13 +122,15 @@ export const Settings: React.FC<SettingsProps> = ({ habits }) => {
         <h3 className="font-semibold text-gray-800 mb-4">Notifications</h3>
         
         <SettingRow label="Daily Reminders">
+        <div className="ml-2">
           <Toggle enabled={notifications} onChange={setNotifications} />
+        </div>
         </SettingRow>
 
         {notifications && (
           <>
             <SettingRow label="Reminder Time">
-              <select className="bg-gray-50 border border-gray-200 rounded-lg px-3 py-1 text-sm">
+              <select className="bg-gray-50 border border-gray-200 rounded-lg px-3 py-1 text-sm ml-2">
                 <option>9:00 AM</option>
                 <option>12:00 PM</option>
                 <option>6:00 PM</option>
@@ -139,11 +149,11 @@ export const Settings: React.FC<SettingsProps> = ({ habits }) => {
         )}
 
         {/* Mock notification preview */}
-        <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+        <div className="mt-4 p-3 bg-gray-100 rounded-lg">
           <div className="text-xs text-gray-500 mb-2">Preview:</div>
           <div className="flex items-center text-sm">
             <span className="text-lg mr-2 p-2"> 🔔 </span>
-            <span>  Time to complete your habits!   💪</span>
+            <span className= "ml-2">  Time to complete your habits! 💪</span>
           </div>
         </div>
       </div>
