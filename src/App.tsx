@@ -6,6 +6,7 @@ import { Insights } from '@/components/features/insights';
 import { PhoneFrame, StatusBar, Navigation } from '@/components/layout';
 import { useHabits, useNavigation, useQuotes } from '@/hooks';
 import { initialVisionBoards } from '@/data';
+import { Settings } from '@/components/features/settings';
 
 const App: React.FC = () => {
   const { habits, completeHabit, getTotalStreak } = useHabits();
@@ -52,12 +53,21 @@ const App: React.FC = () => {
         {activeTab === 'vision' && renderVisionBoard()}
         {activeTab === 'calendar' && <Calendar habits={habits} />}
         {activeTab === 'insights' && <Insights habits={habits} />}
+        {activeTab === 'settings' && <Settings habits={habits} />}
         
         <Navigation 
           activeTab={activeTab} 
           onTabChange={navigateTo} 
           canNavigateTo={canNavigateTo} 
         />
+        {activeTab === 'dashboard' && (
+          <button 
+            className="absolute bottom-24 right-5 w-14 h-14 bg-primary-500 hover:bg-primary-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer"
+            onClick={() => console.log('Add habit functionality')}
+          >
+            <span className="text-2xl">+</span>
+          </button>
+        )}
       </PhoneFrame>
     </div>
   );
