@@ -39,7 +39,7 @@ export const Navigation: React.FC<NavigationProps> = ({
           >
             <motion.div 
               className={`w-6 h-6 mb-1 rounded-full ${
-                isActive ? 'bg-primary-500' : 'bg-current'
+                isActive ? 'bg-primary-500' : 'bg-gray-400'
               }`}
               animate={isActive ? { scale: [1, 1.2, 1] } : { scale: 1 }}
               transition={{ duration: 0.3 }}
